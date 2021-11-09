@@ -1,3 +1,3 @@
-# MarginalenComponents
+# MarginalenLibrary
 
-A description of this package.
+This library is used for Marginalen Bank and it's SwiftUI components, utils and helpers
