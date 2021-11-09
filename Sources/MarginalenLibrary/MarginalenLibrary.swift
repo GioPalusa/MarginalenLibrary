@@ -1,5 +1,5 @@
 public struct MarginalenLibrary {
-    public private(set) var text = "Hello, World!"
+	public let analyticsManager = AnalyticsManager.shared
 
     public init() {
     }
