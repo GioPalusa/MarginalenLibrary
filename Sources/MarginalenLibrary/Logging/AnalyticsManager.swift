@@ -10,10 +10,7 @@ import FirebaseAnalytics
 import UIKit
 
 public class AnalyticsManager {
-
-	static let shared = AnalyticsManager()
-
-    func sendLog(log: Log) {
+    static func sendLog(log: Log) {
         let filteredLog = log.parameters.dictionary?.filter { $0.key != "name" }
         #if !DEBUG
         Analytics.logEvent(log.parameters.name ?? "", parameters: filteredLog)
@@ -23,7 +20,7 @@ public class AnalyticsManager {
         #endif
     }
 
-    func sendLog(with parameters: AnalyticsLog) {
+    public static func sendLog(with parameters: AnalyticsLog) {
         let filteredParameters = parameters.dictionary?.filter { $0.key != "name" }
         #if !DEBUG
         Analytics.logEvent(parameters.name ?? "", parameters: filteredParameters)
@@ -33,16 +30,16 @@ public class AnalyticsManager {
         #endif
     }
 
-    struct Log: Codable {
+    public struct Log: Codable {
         var event: EventNameType = .interaction
         var parameters: Parameters
     }
 
-    enum LogSubject: String, Codable {
+    public enum LogSubject: String, Codable {
         case cardTransaction = "crossBorder_transaction"
     }
 
-    enum EventNameType: String, Codable {
+    public enum EventNameType: String, Codable {
         case pushNotification = "push_notis"
         case consent = "approve_offers"
         case interaction
@@ -50,14 +47,14 @@ public class AnalyticsManager {
         case privateMaskedData = "private"
     }
 
-    enum Answer: String, Codable {
+    public enum Answer: String, Codable {
         case yes
         case nope = "no"
     }
 }
 
 extension AnalyticsManager {
-    func log(event: EventNameType = .interaction,
+    public static func log(event: EventNameType = .interaction,
                     name: Name = .list,
                     action: Action = .click,
                     label: String?,
@@ -94,7 +91,7 @@ extension AnalyticsManager {
         AnalyticsManager.sendLog(log: Log(event: event, parameters: log))
     }
 
-    func logMenuSwap(position: Int, newPosition: Int, item: MainMenuItem) {
+    public static func logMenuSwap(position: Int, newPosition: Int, item: MainMenuItem) {
         log(event: .interaction,
             name: .icon,
             action: .drag,
@@ -113,7 +110,7 @@ extension AnalyticsManager {
             subject: nil)
     }
 
-    func logMFlex(event: MFlexLog.EventType,
+    public static func logMFlex(event: MFlexLog.EventType,
                          type: LogType? = nil,
                          product: Product? = .mflex,
                          category: Category? = .creditcards,
@@ -165,7 +162,7 @@ extension AnalyticsManager {
         sendLog(with: log)
     }
 
-    func logCreditLimitIncrease(event: CreditLimitIncreaseLog.EventType,
+    public static func logCreditLimitIncrease(event: CreditLimitIncreaseLog.EventType,
                                        type: LogType? = nil,
                                        product: String? = nil,
                                        category: Category? = .creditcards,
@@ -243,7 +240,7 @@ extension AnalyticsManager {
                                          cancelReason: cancelReason)
         sendLog(with: log)
     }
-    func logEInvoice(event: EInvoiceLog.EventType,
+    public static func logEInvoice(event: EInvoiceLog.EventType,
                             type: LogType? = nil,
                             product: Product? = .eInvoice,
                             category: Category? = .payment,
