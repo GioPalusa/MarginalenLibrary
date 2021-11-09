@@ -9,7 +9,7 @@
 import Foundation
 
 extension AnalyticsManager {
-    enum Name: String, Codable {
+	public enum Name: String, Codable {
         // MARK: - General
         case pageSwipe = "page_swipe"
         case slider

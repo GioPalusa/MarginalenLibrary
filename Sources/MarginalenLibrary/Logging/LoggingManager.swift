@@ -9,7 +9,7 @@
 import UIKit
 import FirebaseAnalytics
 
-class LoggingManager {
+public class LoggingManager {
 
     static func sendLog(log: AnalyticsLog) {
         #if !DEBUG
@@ -17,7 +17,7 @@ class LoggingManager {
         #endif
     }
 
-    class AnalyticsLog: Codable {
+	public class AnalyticsLog: Codable {
         var name: String
         var action: String
         var label: String?
@@ -53,14 +53,14 @@ class LoggingManager {
         }
     }
 
-    enum AnalyticsLinktype: String, Codable {
+	public enum AnalyticsLinktype: String, Codable {
         case internalLink = "Internal"
         case external = "External"
         case pdf = "PDF"
         case toggle = "Toggle"
     }
 
-    enum AnalyticsCategory: String, Codable {
+    public enum AnalyticsCategory: String, Codable {
         case accounts = "Konton"
         case creditcards = "Kreditkort och Bankkort"
         case digital = "Digitala tjänster"
@@ -68,7 +68,7 @@ class LoggingManager {
         case unknown
     }
 
-    enum AnalyticsProduct: Codable {
+    public enum AnalyticsProduct: Codable {
         case sparande
         case lonekonto
         case fastrantekonto
@@ -126,7 +126,7 @@ class LoggingManager {
         }
     }
 
-    enum AnalyticsName: String, Codable {
+    public enum AnalyticsName: String, Codable {
         case pageSwipe = "page_swipe"
         case slider
         case icon
@@ -138,7 +138,7 @@ class LoggingManager {
         case checkbox
     }
 
-    enum AnalyticsLogType: String, Codable {
+    public enum AnalyticsLogType: String, Codable {
         case circle
         case switchbtn = "switch_button"
         case rectangle
@@ -159,7 +159,7 @@ class LoggingManager {
         case datepicker = "date_picker"
     }
 
-    enum AnalyticsLogAction: String, Codable {
+    public enum AnalyticsLogAction: String, Codable {
         case swipe
         case drag
         case click
@@ -168,7 +168,7 @@ class LoggingManager {
 
 extension LoggingManager {
 
-    func logMenuSwap(position: Int, newPosition: Int, item: MainMenuItem) {
+    public func logMenuSwap(position: Int, newPosition: Int, item: MainMenuItem) {
         let log = LoggingManager.AnalyticsLog(name: "icon",
                                               action: LoggingManager.AnalyticsLogAction.drag.rawValue,
                                               label: item.name,

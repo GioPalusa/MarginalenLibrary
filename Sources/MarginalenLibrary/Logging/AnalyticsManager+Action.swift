@@ -9,7 +9,7 @@
 import Foundation
 
 extension AnalyticsManager {
-    enum Action: String, Codable {
+    public enum Action: String, Codable {
         case swipe
         case drag
         case click

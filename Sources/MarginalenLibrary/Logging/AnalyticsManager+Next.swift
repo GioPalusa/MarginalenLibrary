@@ -9,7 +9,7 @@
 import Foundation
 
 extension AnalyticsManager {
-    enum Next {
+	public enum Next {
         case pageview(view: String)
         case webView(view: String)
         case appview(view: String)

@@ -9,7 +9,7 @@
 import Foundation
 
 extension AnalyticsManager {
-    enum LogType: String, Codable {
+	public enum LogType: String, Codable {
         case circle
         case `switch` = "switch button"
         case rectangle

@@ -9,7 +9,7 @@
 import Foundation
 
 extension AnalyticsManager {
-    enum Direction: String {
+	public enum Direction: String {
         // swiftlint:disable:next identifier_name
         case right, left, up, down
     }

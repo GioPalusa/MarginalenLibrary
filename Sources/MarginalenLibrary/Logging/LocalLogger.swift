@@ -10,7 +10,7 @@ import os.log
 import Foundation
 
 // swiftlint:disable identifier_name
-class LocalLogger {
+public class LocalLogger {
 
     // Function for public logging
     static func log(UI: String) {

@@ -9,7 +9,7 @@
 import Foundation
 
 extension AnalyticsManager {
-    struct Parameters: AnalyticsLog, Codable {
+	public struct Parameters: AnalyticsLog, Codable {
         var name: String?
         var action: String
         var label: String?

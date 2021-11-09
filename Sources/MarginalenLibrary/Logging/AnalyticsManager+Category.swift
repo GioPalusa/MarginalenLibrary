@@ -9,7 +9,7 @@
 import Foundation
 
 extension AnalyticsManager {
-    enum Category: String, Codable {
+	public enum Category: String, Codable {
         case accounts = "Konton"
         case creditcards = "Kreditkort och Bankkort"
         case digital = "Digitala tjänster"

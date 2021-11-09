@@ -9,7 +9,7 @@
 import Foundation
 
 extension AnalyticsManager {
-    enum Linktype: String, Codable {
+	public enum Linktype: String, Codable {
         case internalLink = "Internal"
         case external = "External"
         case pdf = "PDF"

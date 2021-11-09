@@ -9,7 +9,7 @@
 import Foundation
 
 extension AnalyticsManager {
-    enum Product: Codable {
+	public enum Product: Codable {
         case sparande
         case lonekonto
         case fastrantekonto
