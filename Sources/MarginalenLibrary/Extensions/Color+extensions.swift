@@ -1,23 +1,22 @@
 //
-//  Color+extensions.swift
-//  Marginalen
+//  File.swift
+//  
 //
-//  Created by Jacob Ahlberg on 2021-05-17.
-//  Copyright © 2021 Marginalen Bank. All rights reserved.
+//  Created by Giovanni Palusa on 2021-11-18.
 //
 
 import SwiftUI
 
 extension Color {
-    static func marginalen(color: UIColor.MarginalenColors) -> Color {
-        Color(color.color)
-    }
 
-    static func marginalen(color: UIColor.MarginalenColors, withAlpha alpha: CGFloat) -> Color {
-        Color(color.color.withAlphaComponent(alpha))
-    }
+	public static var primaryRed: Color { return Color("PrimaryRed", bundle: Bundle.module) }
+	public static var background: Color { return Color("Background", bundle: Bundle.module) }
+	public static var dangerError: Color { return Color("DangerError", bundle: Bundle.module) }
+	public static var elevatedBackground: Color { return Color("ElevatedBackground", bundle: Bundle.module) }
+	public static var graphite: Color { return Color("Graphite", bundle: Bundle.module) }
+	public static var mint: Color { return Color("Mint", bundle: Bundle.module) }
+	public static var peach: Color { return Color("Peach", bundle: Bundle.module) }
+	public static var primaryBlack: Color { return Color("PrimaryBlack", bundle: Bundle.module) }
+	public static var purple: Color { return Color("Purple", bundle: Bundle.module) }
 
-    static let systemBackground = Color(UIColor.systemBackground)
-    static let secondarySystemGroupedBackground = Color(UIColor.secondarySystemGroupedBackground)
-    static let label = Color(UIColor.label)
 }
